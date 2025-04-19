@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait1",
+				"name": "called_pipeline",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],

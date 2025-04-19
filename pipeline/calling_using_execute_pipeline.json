@@ -3,7 +3,16 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Pipeline1",
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 3
+				}
+			},
+			{
+				"name": "calling_pipeline",
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
@@ -26,20 +35,11 @@
 				}
 			},
 			{
-				"name": "Wait1",
-				"type": "Wait",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"waitTimeInSeconds": 3
-				}
-			},
-			{
 				"name": "Wait2",
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Execute Pipeline1",
+						"activity": "calling_pipeline",
 						"dependencyConditions": [
 							"Succeeded"
 						]
